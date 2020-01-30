@@ -13,13 +13,24 @@ $(document).ready(function() {
   //
   //
   // });
-
+  var cinque = 5;
   $.ajax(
      {
        "url" : "https://flynn.boolean.careers/exercises/api/random/int",
        "method" : "GET",
        "success" : function(risposta) {
-         console.log(risposta.response);
+          var result = risposta.response;
+         console.log(result);
+         if (result > cinque) {
+
+           console.log("verde");
+           $(".risultato").parent().addClass("green").append(result);
+         }
+         else {
+           console.log("giallo");
+           $(".risultato").parent().addClass("yellow").append(result);
+         }
+
        },
        "error" : function() {
            alert("Errore");
@@ -28,3 +39,8 @@ $(document).ready(function() {
   )
 
 });
+
+
+// function stampaNumero (numero) {
+//   console.log(numero);
+// }
