@@ -6,6 +6,25 @@
 // Il numero ottenuto appare al centro del quadrato.
 // I quadrati fateli prima a mano e poi con javascript.
 
-$(document).ready(function(){
+$(document).ready(function() {
+
+  // $("column") click(function(){
+  //  $(this)
+  //
+  //
+  // });
+
+  $.ajax(
+     {
+       "url" : "https://flynn.boolean.careers/exercises/api/random/int",
+       "method" : "GET",
+       "success" : function(risposta) {
+         console.log(risposta.response);
+       },
+       "error" : function() {
+           alert("Errore");
+       }
+     }
+  )
 
 });
