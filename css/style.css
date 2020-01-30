@@ -1,0 +1,37 @@
+ *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 70%;
+  width: 70%;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: calc(100% / 6);
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.column {
+  width: calc(100% / 6);
+  height: 100%;
+  padding: 10px;
+  border: 1px solid red;
+}
