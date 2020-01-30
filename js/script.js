@@ -8,39 +8,29 @@
 
 $(document).ready(function() {
 
-  // $("column") click(function(){
-  //  $(this)
-  //
-  //
-  // });
-  var cinque = 5;
-  $.ajax(
-     {
-       "url" : "https://flynn.boolean.careers/exercises/api/random/int",
-       "method" : "GET",
-       "success" : function(risposta) {
-          var result = risposta.response;
-         console.log(result);
-         if (result > cinque) {
+  $(".column").click(function() {
+    var cliccato = $(this);
 
-           console.log("verde");
-           $(".risultato").parent().addClass("green").append(result);
+    $.ajax({
+         "url" : "https://flynn.boolean.careers/exercises/api/random/int",
+         "method" : "GET",
+         "success" : function(risposta) {
+            var result = risposta.response;
+           console.log(result);
+           if (result > 5) {
+
+             console.log("verde");
+             cliccato.addClass("green").append(result);
+           }
+            else if (result <= 5) {
+             console.log("giallo");
+             cliccato.addClass("yellow").append(result);
+           }
+
+         },
+         "error" : function() {
+             alert("Errore");
          }
-         else {
-           console.log("giallo");
-           $(".risultato").parent().addClass("yellow").append(result);
-         }
-
-       },
-       "error" : function() {
-           alert("Errore");
-       }
-     }
-  )
-
+       });
+  });
 });
-
-
-// function stampaNumero (numero) {
-//   console.log(numero);
-// }
